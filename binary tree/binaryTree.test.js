@@ -99,6 +99,36 @@ describe('Binary tree', () =>{
       expect(emptyTree.countLeaf()).toEqual(0);
     });
   });
+
+  describe('test areSibling', () =>{
+    it('should tree have sibling of 1, 6', () => {
+      expect(tree.areSibling(1, 6)).toBeTruthy();
+    });
+
+    it('should tree have sibling of 6, 1', () => {
+      expect(tree.areSibling(6, 1)).toBeTruthy();
+    });
+
+    it('should tree have sibling of 4, 9', () => {
+      expect(tree.areSibling(4, 9)).toBeTruthy();
+    });
+
+    it('should tree have sibling of 8, 11', () => {
+      expect(tree.areSibling(8, 11)).toBeTruthy();
+    });
+
+    it('should tree not have sibling of 8, 6', () => {
+      expect(tree.areSibling(8, 6)).toBeFalsy();
+    });
+
+    it('should tree not have sibling of 2, 11', () => {
+      expect(tree.areSibling(2, 11)).toBeFalsy();
+    });
+
+    it('should empty tree not have sibling of 2, 1', () => {
+      expect(emptyTree.areSibling(2, 11)).toBeFalsy();
+    });
+  });
 });
 
 

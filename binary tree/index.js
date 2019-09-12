@@ -106,6 +106,22 @@ class Tree {
 
     return getLeaf(this.root);
   }
+
+  areSibling(value1, value2){
+    const testSibling = (node, value1, value2) => {
+      if(!node) return false;
+      if(!node.left || !node.right){
+        return false;
+      }else{
+        return (node.left.value === value1 && node.right.value === value2)
+          || (node.left.value === value2 && node.right.value === value1)
+          || testSibling(node.left, value1, value2)
+          || testSibling(node.right, value1, value2);
+      }
+    }
+
+    return testSibling(this.root, value1, value2)
+  }
 }
 
 module.exports = Tree;

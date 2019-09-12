@@ -1,0 +1,25 @@
+{
+  "name": "data-structure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sydneytiger/Data-Structure.git"
+  },
+  "author": "Tiger Chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sydneytiger/Data-Structure/issues"
+  },
+  "homepage": "https://github.com/sydneytiger/Data-Structure#readme",
+  "dependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0"
+  }
+}

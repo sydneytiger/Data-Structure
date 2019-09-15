@@ -61,20 +61,32 @@ describe('Binary tree', () =>{
   });
 
   describe('test preorderTraversal', () => {
-    it('should return xxx', () => {
-      expect(tree.preorderTraversal()).toBeFalsy();
+    it('should return [7, 4, 1, 2, 6, 9, 8, 11]', () => {
+      expect(tree.preorderTraversal()).toEqual([7, 4, 1, 2, 6, 9, 8, 11]);
+    })
+
+    it('should empty tree result empty array', () => {
+      expect(emptyTree.preorderTraversal()).toEqual([]);
     })
   });
 
   describe('test inorderTraversal', () => {
-    it('should return xxx', () => {
-      expect(tree.inorderTraversal()).toBeFalsy();
+    it('should return [1, 2, 4, 6, 7, 8, 9, 11]', () => {
+      expect(tree.inorderTraversal()).toEqual([1, 2, 4, 6, 7, 8, 9, 11]);
+    })
+
+    it('should empty tree result empty array', () => {
+      expect(emptyTree.inorderTraversal()).toEqual([]);
     })
   });
 
   describe('test postorderTraversal', () => {
-    it('should return xxx', () => {
-      expect(tree.postorderTraversal()).toBeFalsy();
+    it('should return [2, 1, 6, 4, 8, 11, 9, 7]', () => {
+      expect(tree.postorderTraversal()).toEqual([2, 1, 6, 4, 8, 11, 9, 7]);
+    })
+
+    it('should empty tree result empty array', () => {
+      expect(emptyTree.postorderTraversal()).toEqual([]);
     })
   });
 

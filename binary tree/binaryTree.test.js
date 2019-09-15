@@ -60,6 +60,34 @@ describe('Binary tree', () =>{
     });
   });
 
+  describe('test preorderTraversal', () => {
+    it('should return xxx', () => {
+      expect(tree.preorderTraversal()).toBeFalsy();
+    })
+  });
+
+  describe('test inorderTraversal', () => {
+    it('should return xxx', () => {
+      expect(tree.inorderTraversal()).toBeFalsy();
+    })
+  });
+
+  describe('test postorderTraversal', () => {
+    it('should return xxx', () => {
+      expect(tree.postorderTraversal()).toBeFalsy();
+    })
+  });
+
+  describe('test height', () => {
+    it('should tree have heigh of 3', () => {
+      expect(tree.height()).toEqual(3);
+    })
+
+    it('should empty tree have heigh of -1', () => {
+      expect(emptyTree.height()).toEqual(-1);
+    })
+  });
+
   describe('test min', () => {
     it('should tree min return 2', () => {
       expect(tree.min()).toEqual(2);

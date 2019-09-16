@@ -165,6 +165,20 @@ class Tree {
 
     return testSibling(this.root, value1, value2)
   }
+
+  getValueAtDistance(k){
+    const result = [];
+    const getKValue = (node, k, arr) => {
+      if(!node || k < 0) return;
+      if(k === 0) arr.push(node.value);
+
+      getKValue(node.left, k-1, arr);
+      getKValue(node.right, k-1, arr);
+    }
+
+    getKValue(this.root, k, result);
+    return result;
+  }
 }
 
 module.exports = Tree;

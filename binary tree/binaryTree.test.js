@@ -169,6 +169,36 @@ describe('Binary tree', () =>{
       expect(emptyTree.areSibling(2, 11)).toBeFalsy();
     });
   });
+
+  describe('test getValueAtDistance', () => {
+    it('should tree return root value [7] at 0 distance', () => {
+      expect(tree.getValueAtDistance(0)).toEqual([7]);
+    })
+
+    it('should tree return value [4, 9] at 1 distance', () => {
+      expect(tree.getValueAtDistance(1)).toEqual([4, 9]);
+    })
+
+    it('should tree return value [1, 6, 8, 11] at 2 distance', () => {
+      expect(tree.getValueAtDistance(2)).toEqual([1, 6, 8, 11]);
+    })
+
+    it('should tree return value [2] at 3 distance', () => {
+      expect(tree.getValueAtDistance(3)).toEqual([2]);
+    })
+
+    it('should tree return value empty array at 4 distance', () => {
+      expect(tree.getValueAtDistance(4)).toEqual([]);
+    })
+
+    it('should empty tree return empty array at any distance', () => {
+      expect(emptyTree.getValueAtDistance(0)).toEqual([]);
+      expect(emptyTree.getValueAtDistance(1)).toEqual([]);
+      expect(emptyTree.getValueAtDistance(2)).toEqual([]);
+      expect(emptyTree.getValueAtDistance(3)).toEqual([]);
+
+    })
+  });
 });
 
 

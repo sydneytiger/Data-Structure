@@ -196,9 +196,18 @@ describe('Binary tree', () =>{
       expect(emptyTree.getValueAtDistance(1)).toEqual([]);
       expect(emptyTree.getValueAtDistance(2)).toEqual([]);
       expect(emptyTree.getValueAtDistance(3)).toEqual([]);
-
     })
   });
+
+  describe('test breadthFirstTraversal', () => {
+    it('should tree return [7, 4, 9, 1, 6, 8, 11, 2]', () => {
+      expect(tree.breadthFirstTraversal()).toEqual([7, 4, 9, 1, 6, 8, 11, 2]);
+    })
+
+    it('should empty tree return []', () => {
+      expect(emptyTree.breadthFirstTraversal()).toEqual([]);
+    })
+  })
 });
 
 

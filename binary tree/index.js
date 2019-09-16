@@ -179,6 +179,15 @@ class Tree {
     getKValue(this.root, k, result);
     return result;
   }
+
+  breadthFirstTraversal(){
+    let result = [];
+    for(let i = 0; i <= this.height(this.root); i++){
+      const temp = this.getValueAtDistance(i);
+      result = [...result, ...temp];
+    }
+    return result;
+  }
 }
 
 module.exports = Tree;

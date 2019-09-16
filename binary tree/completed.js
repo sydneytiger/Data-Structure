@@ -39,8 +39,6 @@ class Tree {
     }
   };
 
-  find(value){};
-
   contains(value){
     const search = (node, value) => {
       if(!node) return false;

@@ -1,9 +1,9 @@
-const Tree = require('./index');
+const Tree = require('./exercise');
+//const Tree = require('./completed');
 
 describe('Binary tree', () =>{
   let tree;
   let emptyTree;
-  let copyTree;
   beforeAll(() => {
     tree = new Tree();
     tree.insert(7);

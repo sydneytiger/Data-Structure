@@ -1,7 +1,7 @@
 # Data-Structure
 
 data structure learning codes using `javascript` (node.js)
-1. **Binary tree** (completed)
+1. **Binary tree** (complete)
 2. **Linked list** (in progress)
 3. **Array**       (pending)
 4. **Stack**       (pending)

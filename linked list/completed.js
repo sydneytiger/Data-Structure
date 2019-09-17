@@ -64,6 +64,7 @@ class LinkedList {
     }
     
     back.next = null;
+    if(this.head === back) this.head = null;
   }
   
   contains(value){
@@ -114,13 +115,13 @@ class LinkedList {
     this.head = back;
   }
   
-  nodeFromEnd(k) {
+  valueFromEnd(k) {
     if(!this.head) return null;
     if(k < 0) return null;
     let total = this.size();
-    if(k > total) return null;
+    if(k + 1 > total) return null;
     
-    return this.indexOf(total - k);
+    return this.indexOf(total - k - 1);
   }
   
   printMiddle(){
@@ -128,12 +129,12 @@ class LinkedList {
   }
 
   swapNodeInPair(){
-    
+
   }
   
-  hasLoop(){
-    let slow = head;
-    let fast = head;
+  hasLoop1() {
+    let slow = this.head;
+    let fast = this.head;
     while(slow && fast && fast.next){
         slow = slow.next;
         fast = fast.next.next;
@@ -143,6 +144,19 @@ class LinkedList {
     return false;
   }
 
+  hasLoop2() {
+    let current = this.head;
+    const nodeSet = new Set();
+    while(current){
+      if(nodeSet.has(current)) return true;
+      nodeSet.add(current);
+      current = current.next;
+    }
+
+    return false;
+  }
+
 }
 
-module.exports = LinkedList;
+module.exports.LinkedList = LinkedList;
+module.exports.Node = Node;

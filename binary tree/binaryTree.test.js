@@ -1,5 +1,5 @@
-const Tree = require('./exercise');
-//const Tree = require('./completed');
+//const Tree = require('./exercise');
+const Tree = require('./completed');
 
 describe('Binary tree', () =>{
   let tree;

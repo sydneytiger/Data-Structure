@@ -1,4 +1,5 @@
 const {LinkedList, Node} = require('./completed');
+//const {LinkedList, Node} = require('./exercise');
 
 describe('Binary tree', () =>{
   let linkedList;
@@ -52,6 +53,18 @@ describe('Binary tree', () =>{
     node2.next = node3;
     node3.next = node4;
     node4.next = node2;
+
+    const loop = new LinkedList();
+    loop.head = node1;
+    return loop;
+  };
+
+  const getTwoNodeLoop =() => {
+    const node1 = new Node(1);
+    const node2 = new Node(2);
+
+    node1.next = node2;
+    node2.next = node1;
 
     const loop = new LinkedList();
     loop.head = node1;
@@ -262,8 +275,6 @@ describe('Binary tree', () =>{
 
   });
 
-  describe('test printMiddle', ()=>{});
-
   describe('test hasLoop1', ()=>{
     it('should linkedList have no loop', () => {
       expect(linkedList.hasLoop1()).toBeFalsy;
@@ -280,6 +291,11 @@ describe('Binary tree', () =>{
 
     it('should partialLoop have loop', () => {
       const loop = getLinkedListWithPatialLoop();
+      expect(loop.hasLoop1()).toBeTruesy;
+    })
+
+    it('should twoNodeLoop have loop', () => {
+      const loop = getTwoNodeLoop();
       expect(loop.hasLoop1()).toBeTruesy;
     })
   });
@@ -300,6 +316,11 @@ describe('Binary tree', () =>{
 
     it('should partialLoop have loop', () => {
       const loop = getLinkedListWithPatialLoop();
+      expect(loop.hasLoop2()).toBeTruesy;
+    })
+
+    it('should twoNodeLoop have loop', () => {
+      const loop = getTwoNodeLoop();
       expect(loop.hasLoop2()).toBeTruesy;
     })
   });

@@ -123,15 +123,8 @@ class LinkedList {
     
     return this.indexOf(total - k - 1);
   }
-  
-  printMiddle(){
-    
-  }
 
-  swapNodeInPair(){
-
-  }
-  
+  // using two pointers
   hasLoop1() {
     let slow = this.head;
     let fast = this.head;
@@ -144,6 +137,7 @@ class LinkedList {
     return false;
   }
 
+  // using Set
   hasLoop2() {
     let current = this.head;
     const nodeSet = new Set();

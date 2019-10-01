@@ -2,11 +2,11 @@
 
 data structure learning codes using `javascript` (node.js)
 1. **Binary tree** (complete)
-2. **Linked list** (in progress)
+2. **Linked list** (complete)
 3. **Array**       (pending)
 4. **Stack**       (pending)
 5. **Queue**       (pending)
-6. **Hash table**  (pending)
+6. **Hash table**  (in progress)
 7. **Heaps**       (pending)
 8. **Tries**       (pending)
 9. **Graph**       (pending)

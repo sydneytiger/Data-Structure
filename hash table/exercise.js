@@ -75,38 +75,21 @@ class Bucket{
 
 class HashTable{
   constructor(){
-    this.bucketSize = 8;
-    this.buckets = [];
+    //TODO: implementation here
   }
   
   hash(key){ return key%this.bucketSize; }
   
   put(key, value){
-    const index = this.hash(key);
-    const newEntry = new Entry(key, value);
-    
-    if(!this.buckets[index]) {
-      const bucket = new Bucket();
-      bucket.add(newEntry);
-      this.buckets[index] = bucket;
-    }
-    else{
-      this.buckets[index].add(newEntry);
-    }
+    //TODO: implementation here
   }
   
   get(key){
-    const index = this.hash(key);
-    const bucket = this.buckets[index];
-    if(!bucket) return null;
-    return bucket.findByKey(key).value;
+    //TODO: implementation here
   }
   
   remove(key){
-    const index = this.hash(key);
-    const bucket = this.buckets[index];
-    if(!bucket) return null;
-    bucket.remove(key);
+    //TODO: implementation here
   }
 }
 

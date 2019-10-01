@@ -1,10 +1,11 @@
+//const { HashTable, Bucket, Entry } = require('./exercise');
 const { HashTable, Bucket, Entry } = require('./completed');
 
 describe('test HashTable', () => {
   let hashTable;
   let emptyHashTable;
 
-  beforeAll(() => {
+  beforeEach(() => {
     emptyHashTable = new HashTable();
 
     hashTable = new HashTable();
@@ -58,10 +59,33 @@ describe('test HashTable', () => {
 
     it('should hashTable add new value 16 to key 16', () => {
       hashTable.put(16, 'value 16');
-      expect(hashTable.get(16)).toEqual('value 16');
+      expect(hashTable.buckets.length).toEqual(2);
+      expect(hashTable.buckets[0].head.value).toEqual('value 16');
+    })
+
+    it('should emptyHashTable add new value of 6 with value 6', ()=>{
+      emptyHashTable.put(6, 'value 6');
+      expect(emptyHashTable.buckets[6].head.value).toEqual('value 6');
     })
   });
 
   
-  describe('test remove', () => {});
+  describe('test remove', () => {
+    it('should emptyHashTable remove key 0', ()=>{
+      emptyHashTable.remove(0);
+      expect(emptyHashTable.buckets[0]).toBeUndefined();
+    })
+
+    it('should hashTable remove key 0', ()=>{
+      hashTable.remove(0);
+      expect(hashTable.buckets[0].head.value).toEqual('value 8');
+      expect(hashTable.buckets[0].head.next).toBeNull();
+    });
+
+    it('should hashTable remove key 8', ()=>{
+      hashTable.remove(8);
+      expect(hashTable.buckets[0].head.value).toEqual('value 0');
+      expect(hashTable.buckets[0].head.next).toBeNull();
+    });
+  });
 });
